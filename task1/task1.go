@@ -15,6 +15,5 @@ func printSegitiga(tinggi int) {
 }
 
 func main() {
-	baris := 5
-	printSegitiga(baris)
+	printSegitiga(5)
 }
