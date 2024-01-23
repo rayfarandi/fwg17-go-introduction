@@ -32,12 +32,10 @@ func GeneratePassword(length int, low bool, med bool, strong bool, customPasswor
 	return string(password)
 }
 
-func Task2() {
+func Task2(customPassword string, strong bool) {
 	length := 12
 	low := false
 	med := false
-	strong := true
-	customPassword := "abcd"
 
 	password := GeneratePassword(length, low, med, strong, customPassword)
 	fmt.Println("Generated Password:", password)

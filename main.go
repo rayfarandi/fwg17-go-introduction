@@ -6,7 +6,14 @@ import (
 )
 
 func main() {
+	// task1
+
 	task1.PrintSegitiga(5)
-	task2.Task2()
+
+	// task 2
+
+	customPassword := "abcd"
+	strong := true
+	task2.Task2(customPassword, strong)
 
 }
