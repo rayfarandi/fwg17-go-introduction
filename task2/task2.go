@@ -3,45 +3,42 @@ package main
 import (
 	"fmt"
 	"math/rand"
-	"time"
 )
 
-func genPassword(password string, level string) string {
+func generatePassword(length int, low bool, med bool, strong bool, customPassword string) string {
+	const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+	var password []byte
+	var charSource string
 
-	var tambahanKarakter string
-	switch level {
-	case "low":
-		tambahanKarakter = "0123456789"
-	case "medium":
-		tambahanKarakter = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+	if low {
+		charSource += ""
+	}
+	if med {
+		charSource += "0123456789"
+	}
+	if strong {
+		charSource += "!@#$%^&*()_+=-"
+	}
+	charSource += charset
 
-	case "strong":
-		tambahanKarakter = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*"
-
-	default:
-		return "Level Tidak ada"
+	if customPassword != "" {
+		charSource += customPassword
 	}
 
-	var newPassword []rune
-	newPassword = append(newPassword, []rune(password)...)
-
-	for i := len(newPassword); i < 9; i++ {
-		newPassword = append(newPassword, []rune(tambahanKarakter)[rand.Intn(len(tambahanKarakter))])
+	for i := 0; i < length; i++ {
+		randNum := rand.Intn(len(charSource))
+		password = append(password, charSource[randNum])
 	}
-
-	rand.Seed(time.Now().UnixNano())
-	rand.Shuffle(len(newPassword), func(i, j int) {
-		newPassword[i], newPassword[j] = newPassword[j], newPassword[i]
-	})
-
-	return string(newPassword)
-
+	return string(password)
 }
 
 func main() {
-	password := "abcd"
-	level := "strong"
+	length := 12
+	low := false
+	med := false
+	strong := true
+	customPassword := "abcd"
 
-	newPassword := genPassword(password, level)
-	fmt.Println("password baru :", newPassword)
+	password := generatePassword(length, low, med, strong, customPassword)
+	fmt.Println("Generated Password:", password)
 }
