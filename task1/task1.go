@@ -1,8 +1,8 @@
-package main
+package task1
 
 import "fmt"
 
-func printSegitiga(tinggi int) {
+func PrintSegitiga(tinggi int) {
 	for i := tinggi; i > 0; i-- {
 		for j := 0; j < tinggi-i; j++ {
 			fmt.Print(" ")
@@ -12,8 +12,4 @@ func printSegitiga(tinggi int) {
 		}
 		fmt.Println()
 	}
-}
-
-func main() {
-	printSegitiga(5)
 }

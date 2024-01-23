@@ -1,11 +1,11 @@
-package main
+package task2
 
 import (
 	"fmt"
 	"math/rand"
 )
 
-func generatePassword(length int, low bool, med bool, strong bool, customPassword string) string {
+func GeneratePassword(length int, low bool, med bool, strong bool, customPassword string) string {
 	const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 	var password []byte
 	var charSource string
@@ -32,13 +32,13 @@ func generatePassword(length int, low bool, med bool, strong bool, customPasswor
 	return string(password)
 }
 
-func main() {
+func Task2() {
 	length := 12
 	low := false
 	med := false
 	strong := true
 	customPassword := "abcd"
 
-	password := generatePassword(length, low, med, strong, customPassword)
+	password := GeneratePassword(length, low, med, strong, customPassword)
 	fmt.Println("Generated Password:", password)
 }
