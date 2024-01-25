@@ -32,11 +32,13 @@ func GeneratePassword(length int, low bool, med bool, strong bool, customPasswor
 	return string(password)
 }
 
-func Task2(customPassword string, strong bool) {
+func GenPass(customPassword string, strong bool) {
 	length := 12
 	low := false
 	med := false
 
 	password := GeneratePassword(length, low, med, strong, customPassword)
+	fmt.Printf("Custom Password yang Anda masukan adalah :  %s ", customPassword)
+	fmt.Println()
 	fmt.Println("Generated Password:", password)
 }
