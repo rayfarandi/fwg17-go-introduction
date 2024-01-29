@@ -17,7 +17,7 @@ func GeneratePassword(length int, low bool, med bool, strong bool, customPasswor
 		charSource += "0123456789"
 	}
 	if strong {
-		charSource += "!@#$%^&*()_+=-"
+		charSource += "0123456789!@#$%^&*()_+=-"
 	}
 	charSource += charset
 

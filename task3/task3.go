@@ -11,10 +11,6 @@ func PilihFilem(duration int) string {
 				result = fmt.Sprintf(`Rekomendasi Film dengan durasi penerbangan %d jam
 Film ke-%d dengan durasi %d jam dan film ke-%d dengan durasi %d jam`, duration, i+1, filmPertama, j+1, filmKedua)
 				return result
-			} else if i == len(data)-1 && filmKedua == duration {
-				result = fmt.Sprintf(`Rekomendasi Film dengan durasi penerbangan %d jam
-Film ke-%d dengan durasi %d jam`, duration, j+1, filmKedua)
-				return result
 			}
 		}
 	}

@@ -9,7 +9,7 @@ import (
 func main() {
 	// task1
 
-	task1.PrintSegitiga(5)
+	task1.PrintSegitiga(2)
 
 	// task 2
 
@@ -19,6 +19,6 @@ func main() {
 
 	// task3
 
-	task3.LamaMenonton(8)
+	task3.LamaMenonton(9)
 
 }
