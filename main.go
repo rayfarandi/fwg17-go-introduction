@@ -19,6 +19,6 @@ func main() {
 
 	// task3
 
-	task3.LamaMenonton(9)
+	task3.LamaMenonton(7)
 
 }
