@@ -1,4 +1,4 @@
-package task2
+package main
 
 import (
 	"fmt"
@@ -6,10 +6,19 @@ import (
 )
 
 func GeneratePassword(length int, low bool, med bool, strong bool, customPassword string) string {
+	defer func() {
+		if p := recover(); p != nil {
+			fmt.Println("Panic Task 2:", p)
+		}
+	}()
+
 	const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 	var password []byte
 	var charSource string
 
+	if length <= 0 {
+		panic("Panjang password harus lebih besar dari 0")
+	}
 	if low {
 		charSource += ""
 	}
@@ -32,8 +41,13 @@ func GeneratePassword(length int, low bool, med bool, strong bool, customPasswor
 	return string(password)
 }
 
-func GenPass(customPassword string, strong bool) {
-	length := 12
+func GenPass(customPassword string, strong bool, length int) {
+	defer func() {
+		if p := recover(); p != nil {
+			fmt.Println("Panic Task 2:", p)
+		}
+	}()
+
 	low := false
 	med := false
 

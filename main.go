@@ -1,24 +1,25 @@
 package main
 
-import (
-	"github.com/rayfarandi/fwg17-go-introduction/task1"
-	"github.com/rayfarandi/fwg17-go-introduction/task2"
-	"github.com/rayfarandi/fwg17-go-introduction/task3"
-)
-
 func main() {
-	// task1
 
-	task1.PrintSegitiga(2)
+	// Task 1
+	PrintSegitiga(5)
+	// jika ingin memicu panic
+	// PrintSegitiga(-2)
 
-	// task 2
+	// Task 2
 
 	customPassword := "abcd"
 	strong := true
-	task2.GenPass(customPassword, strong)
+	// length := 12
+	// jika ingin memicu panic
+	length := -2
+	GenPass(customPassword, strong, length)
 
-	// task3
+	// Task 3
 
-	task3.LamaMenonton(7)
+	LamaMenonton(7)
+	// jika ingin memicu panic
+	// LamaMenonton(99)
 
 }
